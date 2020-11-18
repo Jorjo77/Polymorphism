@@ -1,12 +1,15 @@
-﻿using System;
+﻿
+using System;
 
 namespace IsKeyword
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int ternary = 5 % 2 == 0 ? 100 : 50;
+            //ако да върни 100, ако не върни 50
+            //(на булев израз) въпросителната означава ако е тру върни първото след ? , а ако е фолс това след :
         }
     }
 }

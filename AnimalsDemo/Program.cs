@@ -18,12 +18,12 @@ namespace Animals
             {
                 Console.WriteLine("Keta");
             }
-            Cat cat = new Cat();//може и н обратното за is-a (t.e. не само проверка родите-дете, а и обратното!):
+            Cat cat = new Cat();//може и н обратното за is-a (t.e. не само проверка родител-дете, а и обратното!):
             if (cat is Animal)
             {
                 Console.WriteLine("Keta e animal");
             }
-            Human catLover = new Human(animal2);
+            Human catLover = new Human(new Dog());
             Human snakeHater = new Human(animal);
 
             while (true)
