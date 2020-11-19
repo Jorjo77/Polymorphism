@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalsDemo", "Animals\Anim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TernaryOperator", "IsKeyword\TernaryOperator.csproj", "{56984E0A-0AF0-48FB-83E3-9BA511AE8706}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operations", "Operations\Operations.csproj", "{8D0AD73A-B688-4E62-A9E5-D2F1A81E6D6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operations", "Operations\Operations.csproj", "{8D0AD73A-B688-4E62-A9E5-D2F1A81E6D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals", "Animals2\Animals.csproj", "{E7E1E043-1E09-4225-8ACF-D074557AEF1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Animals", "Animals2\Animals.csproj", "{E7E1E043-1E09-4225-8ACF-D074557AEF1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{562FC75C-6BB3-4949-BF9E-C197C0BBA2A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{562FC75C-6BB3-4949-BF9E-C197C0BBA2A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{44F52C10-BFA5-4C0E-85AC-0514842E8DE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{562FC75C-6BB3-4949-BF9E-C197C0BBA2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{562FC75C-6BB3-4949-BF9E-C197C0BBA2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{562FC75C-6BB3-4949-BF9E-C197C0BBA2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F52C10-BFA5-4C0E-85AC-0514842E8DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F52C10-BFA5-4C0E-85AC-0514842E8DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F52C10-BFA5-4C0E-85AC-0514842E8DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F52C10-BFA5-4C0E-85AC-0514842E8DE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
