@@ -1,4 +1,6 @@
 ﻿using System;
+using WildFarm.Core;
+using WildFarm.Core.Contracts;
 
 namespace WildFarm
 {
@@ -6,7 +8,8 @@ namespace WildFarm
     {
         public static void Main(string[] args)
         {
-
+            IEngine engine = new Engine();
+            engine.Run();
         }
     }
 }
