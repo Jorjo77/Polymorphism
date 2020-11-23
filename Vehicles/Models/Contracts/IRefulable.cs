@@ -6,6 +6,7 @@ namespace Vehicles.Models.Contracts
 {
     public interface IRefulable
     {
+        public double TankCapacity { get; }
         public void Refuel(double amount);
     }
 }

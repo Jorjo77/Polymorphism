@@ -18,7 +18,7 @@ namespace Vehicles.Core
         {
             Vehicle car = this.ProcessVehicleInfo();
             Vehicle truck = this.ProcessVehicleInfo();
-
+            Vehicle bus = this.ProcessVehicleInfo();
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < n; i++)
@@ -43,6 +43,19 @@ namespace Vehicles.Core
                         {
                             this.Drive(truck, arg);
                         }
+                        else if (vehicleType == "Bus")
+                        {
+                            this.Drive(bus, arg);
+                        }
+                    }
+
+                    else if (cmdType == "DriveEmpty")//Da go izmislq!!!
+                    {
+                        if (vehicleType == "Bus")
+                        {
+                            this.Drive(bus, arg);
+                        }
+
                     }
                     else if (cmdType == "Refuel")
                     {
@@ -53,6 +66,10 @@ namespace Vehicles.Core
                         else if (vehicleType == "Truck")
                         {
                             this.Refuel(truck, arg);
+                        }
+                        else if (vehicleType == "Bus")
+                        {
+                            this.Refuel(bus, arg);
                         }
                     }
                 }
@@ -83,8 +100,9 @@ namespace Vehicles.Core
             string vehicleType = vehicleArgs[0];
             double fuelQuantity = double.Parse(vehicleArgs[1]);
             double fuelConsumption = double.Parse(vehicleArgs[2]);
+            double tankCapacity = double.Parse(vehicleArgs[3]);
 
-            Vehicle currentVehicle = this.vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption);
+            Vehicle currentVehicle = this.vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption, tankCapacity);
 
             return currentVehicle;
         }

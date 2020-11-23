@@ -6,8 +6,9 @@ namespace Vehicles.Models
     {
         private const double FUELL_CONS_INCR = 1.6;
         private const double REFUEL_SUCC_COEF = 0.95;
-        public Truck(double fuelQuantity, double fuelConsumption) 
-            : base(fuelQuantity, fuelConsumption)
+
+        public Truck(double fuelQuantity, double fuelConsumption, double tankCapacity) 
+            : base(fuelQuantity, fuelConsumption, tankCapacity)
         {
         }
 
