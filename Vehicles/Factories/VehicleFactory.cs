@@ -16,31 +16,17 @@ namespace Vehicles.Factories
         {
             Vehicle vehicle;
 
-            if (vehicleType == "Car"&& fuelQuantity<=tankCapacity)//по принцип не се пише точно така, но не знаем още рефлекшън!
+            if (vehicleType == "Car")//по принцип не се пише точно така, но не знаем още рефлекшън!
             {
                 vehicle = new Car(fuelQuantity, fuelConsumption, tankCapacity);
             }
-            else if (vehicleType == "Car" && fuelQuantity > tankCapacity)
-            {
-                fuelQuantity = 0d;
-                vehicle = new Car(fuelQuantity, fuelConsumption, tankCapacity);
-            }
-            else if (vehicleType == "Truck" && fuelQuantity <= tankCapacity)
+
+            else if (vehicleType == "Truck")
             {
                 vehicle = new Truck(fuelQuantity, fuelConsumption, tankCapacity);
             }
-            else if (vehicleType == "Truck" && fuelQuantity > tankCapacity)
+            else if (vehicleType == "Bus")
             {
-                fuelQuantity = 0d;
-                vehicle = new Truck(fuelQuantity, fuelConsumption, tankCapacity);
-            }
-            else if (vehicleType == "Bus" && fuelQuantity <= tankCapacity)
-            {
-                vehicle = new Bus(fuelQuantity, fuelConsumption, tankCapacity);
-            }
-            else if (vehicleType == "Bus" && fuelQuantity > tankCapacity)
-            {
-                fuelQuantity = 0d;
                 vehicle = new Bus(fuelQuantity, fuelConsumption, tankCapacity);
             }
             else

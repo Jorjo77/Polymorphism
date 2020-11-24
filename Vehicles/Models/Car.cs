@@ -9,6 +9,17 @@ namespace Vehicles.Models
             : base(fuelQuantity, fuelConsumption, tankCapacity)// този конструктор не прави нищо друго освен да извика базовия с fuelQuantity, fuelConsumption и tankCapacity)
         {
         }
+
         public override double FuelConsumption => base.FuelConsumption + FUEL_CONSUMPTION_INCR;
+
+        public override void Refuel(double amount)
+        {
+            base.Refuel(amount);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

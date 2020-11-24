@@ -18,5 +18,9 @@ namespace Vehicles.Models
         {
             base.Refuel(amount * REFUEL_SUCC_COEF);
         }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

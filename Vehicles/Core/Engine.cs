@@ -49,7 +49,7 @@ namespace Vehicles.Core
                         }
                     }
 
-                    else if (cmdType == "DriveEmpty")//Da go izmislq!!!
+                    else if (cmdType == "DriveEmpty")
                     {
                         if (vehicleType == "Bus")
                         {
@@ -76,12 +76,12 @@ namespace Vehicles.Core
                 catch (InvalidOperationException ioe)
                 {
                     Console.WriteLine(ioe.Message);
-
                 }
             }
 
-            Console.WriteLine(car);
-            Console.WriteLine(truck);
+            //Console.WriteLine(car);
+            //Console.WriteLine(truck);
+            //Console.WriteLine(bus);
         }
 
         private void Refuel(Vehicle vehicle, double amount)
@@ -92,6 +92,7 @@ namespace Vehicles.Core
         {
             Console.WriteLine(vehicle.Drive(kilometers)); 
         }
+
         //It will create valide type vehicle by given information
         private Vehicle ProcessVehicleInfo()//този метод се явява просто посредник: чете, дава на този който може да направи Vehicle и после го връща! - това е съгласно СОЛИД принципите.
         {

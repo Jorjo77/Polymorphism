@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shapes", "Shapes\Shapes.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicles", "Vehicles\Vehicles.csproj", "{2AEA19B0-1C39-4684-9A11-AB95180F396A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildFarm", "WildFarm\WildFarm.csproj", "{80588B61-D438-4E0F-80AD-071BEC03735C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WildFarm", "WildFarm\WildFarm.csproj", "{80588B61-D438-4E0F-80AD-071BEC03735C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiding", "Raiding\Raiding.csproj", "{58D6755C-F5BC-433D-9657-47111D53DA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{80588B61-D438-4E0F-80AD-071BEC03735C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80588B61-D438-4E0F-80AD-071BEC03735C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80588B61-D438-4E0F-80AD-071BEC03735C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D6755C-F5BC-433D-9657-47111D53DA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D6755C-F5BC-433D-9657-47111D53DA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D6755C-F5BC-433D-9657-47111D53DA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D6755C-F5BC-433D-9657-47111D53DA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
