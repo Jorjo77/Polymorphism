@@ -16,7 +16,14 @@ namespace Vehicles.Models
 
         public override void Refuel(double amount)
         {
-            base.Refuel(amount * REFUEL_SUCC_COEF);
+            if (amount<=TankCapacity)
+            {
+                base.Refuel(amount * REFUEL_SUCC_COEF);
+            }
+            else
+            {
+                base.Refuel(amount);
+            }
         }
         public override string ToString()
         {

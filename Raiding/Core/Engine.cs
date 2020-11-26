@@ -1,8 +1,10 @@
 ﻿using Raiding.Factories;
 using Raiding.Models;
+using Raiding.Models.Contracts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Raiding.Core
 {
@@ -10,11 +12,14 @@ namespace Raiding.Core
     {
 
         private readonly HeroFactory heroFactory;
-        private ICollection<BaseHero> collection;
+        private readonly ICollection<IHero> raid;
+
+        private IHero hero;
         public Engine()
         {
-            this.heroFactory = new HeroFactory();
-            this.collection = new List<BaseHero>();
+            hero = null;
+            heroFactory = new HeroFactory();
+            raid = new List<IHero>();
         }
         public void Run()
         {
@@ -25,13 +30,17 @@ namespace Raiding.Core
             {
                 string heroName = Console.ReadLine();
                 string heroType = Console.ReadLine();
-                BaseHero hero;
+                
                 try
                 {
                     if (heroType == "Druid" || heroType == "Paladin" || heroType == "Rogue" || heroType == "Warrior")
                     {
                         hero = heroFactory.CreateHero(heroName, heroType);
-                        collection.Add(hero);
+                        if (hero != null)
+                        {
+                            raid.Add(hero);
+                        }
+
                     }
 
                 }
@@ -41,10 +50,25 @@ namespace Raiding.Core
                 }
             }
             int bossPower = int.Parse(Console.ReadLine());
-            int herousPower = 0;
-            foreach (var hero in collection)
+            int herousPower = raid.Sum(x=>x.Power);
+
+            CastAbilitiesAll();
+
+            if (herousPower>=bossPower)
             {
-                herousPower+=hero.
+                Console.WriteLine("Victory!");
+            }
+            else
+            {
+                Console.WriteLine("Defeat...");
+            }
+        }
+
+        private void CastAbilitiesAll()
+        {
+            foreach (var hero in raid)
+            {
+                Console.WriteLine(hero.CastAbility());
             }
         }
     }

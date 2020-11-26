@@ -16,9 +16,9 @@ namespace Vehicles.Core
         }
         public void Run()
         {
-            Vehicle car = this.ProcessVehicleInfo();
-            Vehicle truck = this.ProcessVehicleInfo();
-            Vehicle bus = this.ProcessVehicleInfo();
+            Vehicle car = ProcessVehicleInfo();
+            Vehicle truck = ProcessVehicleInfo();
+            Vehicle bus = ProcessVehicleInfo();
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < n; i++)
@@ -33,45 +33,19 @@ namespace Vehicles.Core
 
                 try
                 {
-                    if (cmdType == "Drive")
+                    if (vehicleType == "Car")
                     {
-                        if (vehicleType == "Car")
-                        {
-                            this.Drive(car, arg);
-                        }
-                        else if (vehicleType == "Truck")
-                        {
-                            this.Drive(truck, arg);
-                        }
-                        else if (vehicleType == "Bus")
-                        {
-                            this.Drive(bus, arg);
-                        }
+                        DoTheAction(car, cmdType, vehicleType, arg);
+                    }
+                    else if (vehicleType == "Truck")
+                    {
+                        DoTheAction(truck, cmdType, vehicleType, arg);
+                    }
+                    else
+                    {
+                        DoTheAction(bus, cmdType, vehicleType, arg);
                     }
 
-                    else if (cmdType == "DriveEmpty")
-                    {
-                        if (vehicleType == "Bus")
-                        {
-                            this.Drive(bus, arg);
-                        }
-
-                    }
-                    else if (cmdType == "Refuel")
-                    {
-                        if (vehicleType == "Car")
-                        {
-                            this.Refuel(car, arg);
-                        }
-                        else if (vehicleType == "Truck")
-                        {
-                            this.Refuel(truck, arg);
-                        }
-                        else if (vehicleType == "Bus")
-                        {
-                            this.Refuel(bus, arg);
-                        }
-                    }
                 }
                 catch (InvalidOperationException ioe)
                 {
@@ -79,18 +53,27 @@ namespace Vehicles.Core
                 }
             }
 
-            //Console.WriteLine(car);
-            //Console.WriteLine(truck);
-            //Console.WriteLine(bus);
+            Console.WriteLine(car.ToString());
+            Console.WriteLine(truck.ToString());
+            Console.WriteLine(bus.ToString());
+
         }
 
-        private void Refuel(Vehicle vehicle, double amount)
+        private static void DoTheAction(Vehicle vehicle, string action, string vecihleType, double amount)
         {
-            vehicle.Refuel(amount);
-        }
-        private void Drive(Vehicle vehicle, double kilometers)
-        {
-            Console.WriteLine(vehicle.Drive(kilometers)); 
+            if (action == "DriveEmpty")
+            {
+                vehicle.IsEmpty = true;
+                Console.WriteLine(vehicle.Drive(amount));
+            }
+            else if (action == "Drive")
+            {
+                Console.WriteLine(vehicle.Drive(amount));
+            }
+            else
+            {
+                vehicle.Refuel(amount);
+            }
         }
 
         //It will create valide type vehicle by given information
@@ -103,7 +86,7 @@ namespace Vehicles.Core
             double fuelConsumption = double.Parse(vehicleArgs[2]);
             double tankCapacity = double.Parse(vehicleArgs[3]);
 
-            Vehicle currentVehicle = this.vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption, tankCapacity);
+            Vehicle currentVehicle = vehicleFactory.CreateVehicle(vehicleType, fuelQuantity, fuelConsumption, tankCapacity);
 
             return currentVehicle;
         }

@@ -8,6 +8,7 @@ namespace Raiding.Factories
 {
     public class HeroFactory
     {
+
         public HeroFactory()//конструктор за прегледност(нищо не прави)
         {
 

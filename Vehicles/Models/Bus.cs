@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Vehicles.Common;
-using Vehicles.Models.Contracts;
+﻿
 
 namespace Vehicles.Models
 {
@@ -30,9 +26,7 @@ namespace Vehicles.Models
         }
 
         public override void Refuel(double amount)
-        {
-            base.Refuel(amount);
-        }
+            => base.Refuel(amount);
 
         public override string ToString()
         {

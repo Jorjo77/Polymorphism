@@ -1,23 +1,22 @@
-﻿using System;
+﻿using Raiding.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Raiding.Models
 {
-    public class Warrior : BaseHero
+    public class Warrior : BaseHero, IWarrior
     {
-        private const int power = 100;
+        private const int WarriorPower = 100;
         public Warrior(string name)
             : base(name)
         {
-            this.Power = power;
+            this.Power = WarriorPower;
         }
-
-        public int Power { get; }
 
         public override string CastAbility()
         {
-            return $"Warrior – {this.GetType().Name} – {this.Name} hit for {this.Power} damage";
+            return base.CastAbility() + $"hit for {this.Power} damage"; 
         }
     }
 

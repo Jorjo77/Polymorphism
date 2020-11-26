@@ -10,7 +10,6 @@ namespace Vehicles.Models
     public abstract class Vehicle : IDrivable, IRefulable
     {//когато мислим за абстрактния клас трябва да мислим за всички функционалности общо, как би трябвало да се държат в общия случай, конкретиката ще се разписва надолу по наследниците!!! 
         private const string CANNOT_FIT_FUEL_QUANTITY = "Cannot fit {0} fuel in the tank";
-        private double tankCapacity;
         private double fuelQuantity;
         protected Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)//protected (не public), защото abstract class не може да се инстанцира и ще се ползва само от наследените класове
         {
@@ -22,7 +21,7 @@ namespace Vehicles.Models
         {
             get
             {
-                return FuelQuantity;
+                return fuelQuantity;
             }
             set
             {
@@ -41,10 +40,10 @@ namespace Vehicles.Models
         public virtual bool IsEmpty { get; set; }
         public virtual string Drive(double amount)
         {
-            double fuelNeeded = amount * this.FuelConsumption;
-            if (this.FuelQuantity < fuelNeeded)
+            double fuelNeeded = amount * FuelConsumption;
+            if (FuelQuantity < fuelNeeded)
             {
-                throw new InvalidOperationException(String.Format(ExceptionMessages.NotEnoughFuel, this.GetType().Name));
+                return String.Format(ExceptionMessages.NotEnoughFuel, this.GetType().Name);
             }
 
             this.FuelQuantity -= fuelNeeded;
@@ -56,9 +55,9 @@ namespace Vehicles.Models
         {
             if (amount <= 0)
             {
-                throw new InvalidOperationException(ExceptionMessages.NotEnoughFuel);
+                throw new InvalidOperationException(ExceptionMessages.NegativeFuel);
             }
-            else if (amount + FuelQuantity > tankCapacity)
+            else if (amount + fuelQuantity > TankCapacity)
             {
                 throw new InvalidOperationException(String.Format(CANNOT_FIT_FUEL_QUANTITY, amount));
             }
@@ -66,7 +65,7 @@ namespace Vehicles.Models
             IsEmpty = false;
 
 
-            this.FuelQuantity += amount;
+            FuelQuantity += amount;
 
         }
 

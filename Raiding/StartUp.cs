@@ -1,9 +1,8 @@
-﻿
+﻿using Raiding.Core;
+using Raiding.Models;
+using System;
 
-using Vehicles.Core;
-using Vehicles.Core.Contracts;
-
-namespace Vehicles
+namespace Raiding
 {
     public class StartUp
     {

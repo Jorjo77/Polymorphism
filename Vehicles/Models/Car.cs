@@ -13,9 +13,8 @@ namespace Vehicles.Models
         public override double FuelConsumption => base.FuelConsumption + FUEL_CONSUMPTION_INCR;
 
         public override void Refuel(double amount)
-        {
-            base.Refuel(amount);
-        }
+            =>base.Refuel(amount);
+        
 
         public override string ToString()
         {

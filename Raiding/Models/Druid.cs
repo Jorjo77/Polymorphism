@@ -1,20 +1,21 @@
 ﻿
 
+using Raiding.Models.Contracts;
+
 namespace Raiding.Models
 {
-    public class Druid : BaseHero
+    public class Druid : BaseHero, IDruid
     {
-        private const int power = 80;
+        private  const int DruidPower = 80;
         public Druid(string name) 
             : base(name)
         {
-            this.Power = power;
+            this.Power = DruidPower;
         }
 
-        public int Power { get; }
         public override string CastAbility()
         {
-            return $"Druid – {this.GetType().Name} – {this.Name} healed for {this.Power}";
+            return base.CastAbility() + $"healed for {Power}";
         }
     }
 }

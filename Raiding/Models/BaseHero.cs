@@ -12,7 +12,9 @@ namespace Raiding.Models
             Name = name;
         }
 
-        public string Name { get; }
-        public abstract string CastAbility();
+        public string Name { get; private set; }
+        public virtual int Power { get;  protected set; }
+        public virtual string CastAbility()
+            => $"{this.GetType().Name} - {Name} ";
     }
 }
